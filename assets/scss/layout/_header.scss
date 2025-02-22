@@ -1,0 +1,40 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    min-width: 600px;
+    // opacity: 0;
+    // transform: translateY(-100%);
+    // transition: all 0.3s;
+    transition: transform .3s, color .5s;
+    padding: 17px 100px;
+    color: #fff;
+    &.fixed{
+        transform: translate(0);
+        opacity: 1;
+    }
+    &.dark{
+        color: #000;
+
+        .logo img{filter: invert(0);}
+        .gnb-item .btn-lang svg{filter: invert(1);}
+    }
+    .logo{
+        a{
+            text-decoration: none;
+            transition: color .5s;
+            display: block;
+            width: 100px;   
+            img{
+                width: 100%;
+                filter: brightness(0) invert(1);
+                transition: filter .5s;
+            }
+        }
+    }
+}       
