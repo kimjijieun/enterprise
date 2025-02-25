@@ -1,6 +1,9 @@
-
+.wrap{
+    position: relative;
+    min-width: 1440px;
+}
 body{
-    min-width: 1300px;
+    position: relative;
     background: #fff;
     transition: all 0.4s;
     &.dark{
@@ -50,6 +53,11 @@ body{
     &.on{
         opacity: 1;
         visibility: visible;
+    }
+    &.fixed{
+        position: absolute;
+        right: 100px;
+        bottom: 100px;
     }
 }
 .type-txt1{

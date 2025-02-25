@@ -1,0 +1,24 @@
+.footer{
+    position: relative;
+    z-index: 1;
+    background: #000;
+    color: #fff;
+    .inner{
+        display: flex;
+        justify-content: space-between;
+        padding: 55px 100px;
+        .addr-area{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1;
+        }
+        .f-logo{
+            display: block;
+            width: 193px;
+            height: 42px;
+        }
+    }
+}
