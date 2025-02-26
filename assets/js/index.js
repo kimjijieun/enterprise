@@ -1,5 +1,5 @@
 let lastScroll = 0
-
+// 잘
 $(window).scroll(function(){
   // btn-scroll-top
   let curr = $(this).scrollTop()

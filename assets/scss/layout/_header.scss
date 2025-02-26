@@ -8,13 +8,12 @@
     z-index: 10;
     width: 100%;
     min-width: 600px;
-    // opacity: 0;
-    // transform: translateY(-100%);
-    // transition: all 0.3s;
-    transition: transform .3s, color .5s;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: all 0.3s;
     padding: 17px 100px;
     color: #fff;
-    &.fixed{
+    &.on{
         transform: translate(0);
         opacity: 1;
     }
@@ -22,7 +21,11 @@
         color: #000;
 
         .logo img{filter: invert(0);}
-        .gnb-item .btn-lang svg{filter: invert(1);}
+        .gnb-item .btn-lang svg{filter: invert(1);transition: all 0.3s;}
+
+        .lang-list{
+            a{color: #fff;}
+        }
     }
     .logo{
         a{
@@ -32,8 +35,8 @@
             width: 100px;   
             img{
                 width: 100%;
-                filter: brightness(0) invert(1);
-                transition: filter .5s;
+                filter: invert(1);
+                transition: all 0.3s;
             }
         }
     }
