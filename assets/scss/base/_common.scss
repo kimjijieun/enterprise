@@ -1,6 +1,7 @@
 .wrap{
     position: relative;
     min-width: 1440px;
+    overflow-x: hidden;
 }
 body{
     position: relative;
@@ -17,6 +18,24 @@ body{
         }
         .title{
             color: #fff;
+        }
+        .header{
+            color: #fff;
+            .logo{
+                img{
+                    filter: invert(1);
+    
+                }
+
+            }
+            .gnb-item{
+                .btn-lang{
+                    svg{
+                        filter: invert(0);
+                    }
+    
+                }
+            }
         }
     }
 }
@@ -81,7 +100,7 @@ body{
 
 .type-txt2{
     position: relative;
-    height: 75vh;
+    padding: 218px 0 226px;
     .bg-area{
         height: 100%;
 
