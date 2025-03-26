@@ -780,7 +780,7 @@
         align-items: center;
         font-size: 24px;
         font-weight: bold;
-        // opacity: 0;
+        opacity: 0;
         transition: opacity .5s;
         &.on{
             opacity: 1;
@@ -789,6 +789,9 @@
         .arrow-wrap{
             display: flex;
             margin-bottom: 25px;
+            // opacity: 0;
+
+            // &.on{opacity: 1;}
             .arrow{
                 position: relative;
                 display: block;
@@ -870,7 +873,8 @@
                 }
             }
             .fade{
-                visibility: hidden;
+                // visibility: hidden;
+                opacity: 0;
             }
         }
     }
@@ -886,18 +890,21 @@
     padding: 0 200px;
     color: #fff;
 
-    .title{
-        font-size: 60px;
-        color: #fff;
-        line-height: 1.2;
-        margin-bottom: 20px;
-    }
-    .text{
-        display: block;
-        height: auto;
-        font-size: 24px;
-        font-weight: 600;
-        line-height: 40px;
+    .creator-box{
+        opacity: 0;
+        .title{
+            font-size: 60px;
+            color: #fff;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .text{
+            display: block;
+            height: auto;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 40px;
+        }
     }
     .ic-arrow{
         position: absolute;
@@ -906,6 +913,8 @@
         width: 40px;
         height: 40px;
         transform: translateX(-50%);
+
+        opacity: 0;
     }
 }
 
@@ -914,6 +923,14 @@
         background: transparent;
         border: 0;
 
+        &:first-child{
+            .text{
+                opacity: 0;
+                &:last-child{
+                    margin-top: 0;
+                }
+            }
+        }
         &:nth-child(2){
             background: #0049FF;
         }
@@ -934,6 +951,9 @@
 
         .bg2{
             background: url(../images/choi.png) no-repeat center / cover;
+        }
+        &.blur{
+            .text{opacity: 1;}
         }
     }
     .desc-box{

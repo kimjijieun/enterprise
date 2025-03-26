@@ -26,17 +26,15 @@ $(function(){
 
     // sc-intro
     ScrollTrigger.create({
-        tirgger:".sc-intro",
+        trigger:".sc-intro",
         start:"20% 0%",
         end:"100% 0%",
         // markers: true,
         onEnter:function(){
             $('.header').addClass('on')
-            $('.btn-top').addClass('hide');
         },
         onLeaveBack:function(){
             $('.header').removeClass('on')
-            $('.btn-top').removeClass('hide');
         }
     })
 
@@ -162,18 +160,7 @@ $(function(){
         // markers:true,
         scrub:true,
     });
-
-    // ScrollTrigger.create({
-    //     trigger:'[data-dark="dark"]',
-    //     start:'0 50%',
-    //     end:'100% 50%',
-    //     // markers:true,
-    //     toggleClass:{
-    //       targets:"body",
-    //       className:"dark"
-    //     }
-    // });
-    
+   
 
     ScrollTrigger.create({
         trigger:".sc-possibility",
@@ -332,4 +319,105 @@ $(function(){
         scrub:1,
     })
 
+
+    // 가로스크롤 sc-possibility
+    let economyWidth = $('.sc-economy .split-area').width();
+
+    const economyTl = gsap.timeline()
+    economyTl
+    .to('.sc-economy .split-area',{
+        x: function() {
+            return -economyWidth / 3;
+          },
+          ease: "none",
+          duration:4
+    },'z')
+    .to(".sc-economy .arrow-area .fade",{opacity:1,delay:1,duration:1},'z')
+    
+    ScrollTrigger.create({
+      animation:economyTl,
+      // markers:true,
+      trigger:'.sc-economy',
+      start:'0 0',
+      end:'+=1500',
+      pin:true,
+      scrub:0,
+      invalidateOnRefresh:true,
+      onEnter:function(){
+        $('.sc-economy .card-item').addClass('blur')
+        $('.sc-economy .arrow-area').addClass('on')
+        },
+        onEnterBack:function(){
+        $('.sc-economy .arrow-area').addClass('on')
+        },
+        onLeave:function(){
+        $('.sc-economy .arrow-area').removeClass('on')
+        },
+        onLeaveBack:function(){
+        $('.sc-economy .arrow-area').removeClass('on')
+        }
+    })
+
+
+    // sc-creator
+    const creatorTl = gsap.timeline()
+    creatorTl
+    .to('.sc-creator .creator-box',{opacity:1,duration:4})
+    .to('.sc-creator .ic-arrow',{opacity:1,duration:1})
+    .to('.sc-creator .creator-box',{opacity:0,duration:1},'a')
+    .to('.sc-creator .ic-arrow',{opacity:0,duration:1},'a')
+
+    ScrollTrigger.create({
+    // markers:true,
+    animation:creatorTl,
+    trigger:'.sc-creator',
+    start:'0 0',
+    end:'+=2000',
+    pin:true,
+    scrub:0
+    })
+
+    // 가로스크롤 sc-data
+    let dataWidth = $('.sc-data .split-area').width();
+
+    const dataTl = gsap.timeline()
+    dataTl
+    .to('.sc-data .split-area',{
+        x: function() {
+            return -dataWidth / 2;
+            },
+            ease: "none",
+    })
+    
+    ScrollTrigger.create({
+        animation:dataTl,
+        // markers:true,
+        trigger:'.sc-data',
+        start:'0 0',
+        end:'+=1500',
+        pin:true,
+        scrub:0,
+        invalidateOnRefresh:true,
+        onEnter:function(){
+            $('.sc-data .card-item').addClass('blur')
+        }
+    })
+
+    // 
+    ScrollTrigger.create({
+        // markers:true,
+        trigger:'.footer',
+        start:'-100px 100%',
+        end:'0 0',
+        // start: "0% 100%",
+        // end: "110% 100%",
+        onEnter:function(){
+          $('.btn-top').addClass('fixed')
+          $('.sc-banner02').addClass('on')
+        },
+        onLeaveBack:function(){
+          $('.btn-top').removeClass('fixed')
+          $('.sc-banner02').removeClass('on')
+        }
+    })
 });

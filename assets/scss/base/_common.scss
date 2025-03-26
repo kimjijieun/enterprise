@@ -75,8 +75,9 @@ body{
     }
     &.fixed{
         position: absolute;
-        right: 100px;
-        bottom: 100px;
+        bottom: 300px;
+        opacity: 1;
+        visibility: visible;
     }
     &.hide{
         opacity: 0;

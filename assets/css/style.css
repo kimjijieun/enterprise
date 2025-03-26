@@ -70,8 +70,9 @@ body.dark .header .gnb-item .btn-lang svg {
 }
 .btn-top.fixed {
   position: absolute;
-  right: 100px;
-  bottom: 100px;
+  bottom: 300px;
+  opacity: 1;
+  visibility: visible;
 }
 .btn-top.hide {
   opacity: 0;
@@ -1320,6 +1321,7 @@ ul, li {
           align-items: center;
   font-size: 24px;
   font-weight: bold;
+  opacity: 0;
   -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s;
 }
@@ -1429,7 +1431,7 @@ ul, li {
   display: block;
 }
 .sc-economy .arrow-area .info .fade {
-  visibility: hidden;
+  opacity: 0;
 }
 
 .sc-creator {
@@ -1446,13 +1448,16 @@ ul, li {
   padding: 0 200px;
   color: #fff;
 }
-.sc-creator .title {
+.sc-creator .creator-box {
+  opacity: 0;
+}
+.sc-creator .creator-box .title {
   font-size: 60px;
   color: #fff;
   line-height: 1.2;
   margin-bottom: 20px;
 }
-.sc-creator .text {
+.sc-creator .creator-box .text {
   display: block;
   height: auto;
   font-size: 24px;
@@ -1467,11 +1472,18 @@ ul, li {
   height: 40px;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  opacity: 0;
 }
 
 .sc-data .card-item {
   background: transparent;
   border: 0;
+}
+.sc-data .card-item:first-child .text {
+  opacity: 0;
+}
+.sc-data .card-item:first-child .text:last-child {
+  margin-top: 0;
 }
 .sc-data .card-item:nth-child(2) {
   background: #0049FF;
@@ -1495,6 +1507,9 @@ ul, li {
 }
 .sc-data .card-item .bg2 {
   background: url(../images/choi.png) no-repeat center/cover;
+}
+.sc-data .card-item.blur .text {
+  opacity: 1;
 }
 .sc-data .desc-box {
   margin-top: 40px;
