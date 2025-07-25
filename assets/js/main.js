@@ -320,18 +320,17 @@ $(function(){
     })
 
 
-    // 가로스크롤 sc-possibility
+    // 가로스크롤
     let economyWidth = $('.sc-economy .split-area').width();
 
     const economyTl = gsap.timeline()
     economyTl
-    .to('.sc-economy .split-area',{
-        x: function() {
-            return -economyWidth / 3;
-          },
-          ease: "none",
-          duration:4
+    .to(".sc-economy .split-area",{
+        xPercent:-100,
+        x:"100vw",
+        duration:4
     },'z')
+
     .to(".sc-economy .arrow-area .fade",{opacity:1,delay:1,duration:1},'z')
     
     ScrollTrigger.create({
@@ -339,6 +338,7 @@ $(function(){
       // markers:true,
       trigger:'.sc-economy',
       start:'0 0',
+    //   end:'+='+economyWidth,
       end:'+=1500',
       pin:true,
       scrub:0,
@@ -382,11 +382,9 @@ $(function(){
 
     const dataTl = gsap.timeline()
     dataTl
-    .to('.sc-data .split-area',{
-        x: function() {
-            return -dataWidth / 2;
-            },
-            ease: "none",
+    .to(".sc-data .split-area",{
+        xPercent:-100,
+        x:"100vw",
     })
     
     ScrollTrigger.create({
@@ -394,7 +392,8 @@ $(function(){
         // markers:true,
         trigger:'.sc-data',
         start:'0 0',
-        end:'+=1500',
+        // end:'+='+dataWidth,
+        end:"+=1500",
         pin:true,
         scrub:0,
         invalidateOnRefresh:true,

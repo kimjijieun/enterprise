@@ -81,6 +81,7 @@ body.dark .header .gnb-item .btn-lang svg {
 
 .type-txt1 .title {
   width: 50%;
+  word-break: keep-all;
 }
 .type-txt1 .desc {
   -ms-flex-item-align: end;
@@ -122,7 +123,6 @@ body.dark .header .gnb-item .btn-lang svg {
   line-height: 1.28;
   font-weight: bold;
   color: #000;
-  white-space: nowrap;
 }
 
 .inner {
@@ -616,7 +616,8 @@ ul, li {
       -ms-flex-align: center;
           align-items: center;
   margin-left: 100px;
-  color: #fff;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 .sc-possibility .split-area {
   display: -webkit-box;
@@ -950,9 +951,14 @@ ul, li {
           align-items: center;
   height: 100vh;
   gap: 115px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 .split-area h3 {
   margin-left: 100px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 .split-area .split-desc {
   padding-right: 100px;
@@ -1034,8 +1040,15 @@ ul, li {
   width: 100%;
   padding: 200px 100px 0px 526px;
 }
+.sc-safety .mix-scroll .service-box {
+  width: 1060px;
+  max-width: calc(100vw - 460px);
+  -ms-flex-item-align: end;
+      align-self: end;
+}
 .sc-safety .mix-scroll .title {
   margin-bottom: 30px;
+  white-space: nowrap;
 }
 .sc-safety .mix-scroll .service-list {
   display: -webkit-box;
@@ -1076,6 +1089,8 @@ ul, li {
   background: linear-gradient(135deg, #43cf2e, #0049ff, #e657af);
   border-radius: 20px;
   text-align: center;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 .sc-safety .mix-scroll .service-list .service-item .item-title::before {
   content: "";
@@ -1113,10 +1128,12 @@ ul, li {
   letter-spacing: 0.025em;
 }
 .sc-safety .mix-scroll .service-box2 {
-  width: 1100px;
+  width: 1060px;
   max-width: 100%;
   margin: 170px 0 0;
-  padding-left: 40px;
+  max-width: calc(100vw - 460px);
+  -ms-flex-item-align: end;
+      align-self: end;
 }
 .sc-safety .mix-scroll .service-box2 .sub-title {
   font-weight: bold;
@@ -1138,8 +1155,6 @@ ul, li {
 }
 .sc-safety .mix-scroll .service-box3 {
   position: relative;
-}
-.sc-safety .mix-scroll .service-box3 .card-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1147,14 +1162,12 @@ ul, li {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
+  width: calc(100% + 2px);
   height: 100vh;
 }
-.sc-safety .mix-scroll .service-box3 .card-lock {
+.sc-safety .mix-scroll .service-box3 .card-list {
   position: absolute;
-  top: 50%;
-  left: -440px;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  left: -468px;
   overflow: visible;
 }
 .sc-safety .mix-scroll .service-box3 .card-lock .bg-light {
@@ -1340,60 +1353,61 @@ ul, li {
   width: 27px;
   height: 27px;
   margin-left: -6px;
-  background: #000;
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
   -webkit-animation: arrow 1s alternate infinite ease;
           animation: arrow 1s alternate infinite ease;
-}
-.sc-economy .arrow-area .arrow-wrap .arrow::before {
-  content: "";
-  position: absolute;
-  bottom: -11px;
-  left: -11px;
-  width: 30px;
-  height: 30px;
-  background: #fff;
+  border-style: solid;
+  border-width: 8px;
+  border-left: 0;
+  border-bottom: 0;
 }
 .sc-economy .arrow-area .arrow-wrap .arrow.arrow1 {
-  z-index: 7;
-  background: linear-gradient(45deg, #ee5787 55%, #0049ff 140%);
+  -o-border-image: linear-gradient(60deg, #e657af 60%, #0049ff 160%);
+     border-image: linear-gradient(60deg, #e657af 60%, #0049ff 160%);
+  border-image-slice: 1;
   -webkit-animation-delay: 0.1s;
           animation-delay: 0.1s;
 }
 .sc-economy .arrow-area .arrow-wrap .arrow.arrow2 {
-  z-index: 6;
-  background: linear-gradient(45deg, #ee5787 30%, #0049ff 120%);
+  -o-border-image: linear-gradient(60deg, #e657af 20%, #0049ff 145%);
+     border-image: linear-gradient(60deg, #e657af 20%, #0049ff 145%);
+  border-image-slice: 1;
   -webkit-animation-delay: 0.2s;
           animation-delay: 0.2s;
 }
 .sc-economy .arrow-area .arrow-wrap .arrow.arrow3 {
-  z-index: 5;
-  background: linear-gradient(45deg, #ee5787 10%, #0049ff 100%);
+  -o-border-image: linear-gradient(60deg, #e657af, #0049ff 130%);
+     border-image: linear-gradient(60deg, #e657af, #0049ff 130%);
+  border-image-slice: 1;
   -webkit-animation-delay: 0.3s;
           animation-delay: 0.3s;
 }
 .sc-economy .arrow-area .arrow-wrap .arrow.arrow4 {
-  z-index: 4;
-  background: linear-gradient(45deg, #ee5787 5%, #0049ff 70%, #43cf2e 160%);
+  -o-border-image: linear-gradient(50deg, #e657af, #0049ff 100%);
+     border-image: linear-gradient(50deg, #e657af, #0049ff 100%);
+  border-image-slice: 1;
   -webkit-animation-delay: 0.4s;
           animation-delay: 0.4s;
 }
 .sc-economy .arrow-area .arrow-wrap .arrow.arrow5 {
-  z-index: 3;
-  background: linear-gradient(45deg, #ee5787 5%, #0049ff 50%, #43cf2e 140%);
+  -o-border-image: linear-gradient(50deg, #e657af, #0049ff 80%);
+     border-image: linear-gradient(50deg, #e657af, #0049ff 80%);
+  border-image-slice: 1;
   -webkit-animation-delay: 0.5s;
           animation-delay: 0.5s;
 }
 .sc-economy .arrow-area .arrow-wrap .arrow.arrow6 {
-  z-index: 2;
-  background: linear-gradient(45deg, #ee5787 0%, #0049ff 30%, #43cf2e 120%);
+  -o-border-image: linear-gradient(50deg, #0049ff 45%, #43cf2e 135%);
+     border-image: linear-gradient(50deg, #0049ff 45%, #43cf2e 135%);
+  border-image-slice: 1;
   -webkit-animation-delay: 0.6s;
           animation-delay: 0.6s;
 }
 .sc-economy .arrow-area .arrow-wrap .arrow.arrow7 {
-  z-index: 1;
-  background: linear-gradient(45deg, #0049ff, #43cf2e 85%);
+  -o-border-image: linear-gradient(51deg, #0049ff, #43cf2e 75%);
+     border-image: linear-gradient(51deg, #0049ff, #43cf2e 75%);
+  border-image-slice: 1;
   -webkit-animation-delay: 0.7s;
           animation-delay: 0.7s;
 }
@@ -1641,8 +1655,7 @@ ul, li {
   width: 100%;
   height: 100%;
   background: transparent;
-  -webkit-backdrop-filter: blur(35px);
-          backdrop-filter: blur(35px);
+  backdrop-filter: blur(35px);
   -webkit-transition: 0.2s 0.5s;
   transition: 0.2s 0.5s;
 }
